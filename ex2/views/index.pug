@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Lista de Contratos
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/w3.css')
+  body
+    .w3-container
+      h1.w3-center Lista de Contratos
+      table.w3-table-all.w3-hoverable
+        thead
+          tr.w3-light-grey
+            th ID Contrato
+            th Objecto do Contrato
+            th Data de Celebração
+            th Preço Contratual
+            th NIPC Entidade Comunicante
+            th Entidade Comunicante
+        tbody
+          each contrato in lista
+            tr
+              td
+                a(href=`/${contrato._id}`) #{contrato._id}
+              td #{contrato.objectoContrato}
+              td #{contrato.dataCelebracaoContrato}
+              td #{contrato.precoContratual}
+              td
+                a(href=`/entidades/${contrato.NIPC_entidade_comunicante}`) #{contrato.NIPC_entidade_comunicante}
+              td #{contrato.entidade_comunicante}
