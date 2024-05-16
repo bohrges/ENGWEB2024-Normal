@@ -8,14 +8,13 @@ const contratoSchema = new Schema({
   objectoContrato: String,
   dataPublicacao: String,
   dataCelebracaoContrato: String,
-  //precoContratual: { type: Number, set: v => Number(v.replace(',', '.')) }, // Convert string to number and handle comma as decimal
   precoContratual: String,
   prazoExecucao: Number,
-  NIPC_entidade_comunicante: String, // Assuming it's stored as a string due to potential leading zeros
+  NIPC_entidade_comunicante: String, 
   entidade_comunicante: String,
   fundamentacao: String
 }, {
-  versionKey: false // Disables the versioning field (__v)
+  versionKey: false
 });
 
 const Contrato = mongoose.model('contratos', contratoSchema);

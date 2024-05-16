@@ -39,7 +39,6 @@ router.get('/tipos', (req, res) => {
 
 
 
-/* Listar as contratos por id */
 router.get('/:id', (req, res) => {
   Contrato.getOne(req.params.id)
     .then(contrato => res.json(contrato))
@@ -61,7 +60,7 @@ router.delete('/:id', (req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-/* PUT */
+
 router.put('/:id', (req, res) => {
   Contrato.update(req.params.id, req.body)
     .then(data => res.json(data))
